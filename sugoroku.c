@@ -2,14 +2,18 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#include <time.h>
 
 int sugoroku(){
-	printf("Hello world\n");
-	// rollDice();
-	// print state
+	srandom((unsigned int)time(NULL));
+
+	int dice = rollDice();
+	printf("さいころの目は %d でした\n", dice);
+
 	return 0;
 }
 
 int rollDice(){
-	// random
+	int dice = random() % 6 + 1;
+	return dice;
 }
